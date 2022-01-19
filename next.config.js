@@ -4,7 +4,7 @@ module.exports = {
   },
   env: {
     cookieToken: 'asdf65asdg96a5sdf',
-    api: 'https://foodiebyausten.netlify.app/'
+    api: 'https://foodiebyausten.netlify.app'
   }
 }
 

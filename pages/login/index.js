@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleClick = async () => {
       try {
-          await axios.post(`${process.env.api}/api/login`, {
+          await axios.post(`${process.env.api}api/login`, {
               username,
               password
           })
