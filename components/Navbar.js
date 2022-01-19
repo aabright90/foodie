@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 import { useRouter } from 'next/router'
+import { adminPath } from '../lib/adminPath'
 import Link from 'next/link'
 
 const Navbar = () => {
@@ -12,8 +13,8 @@ const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState()
     const [cookies, removeCookie] = useCookies()
 
-    const { asPath } = useRouter()
 
+    const { asPath } = useRouter()
 
     useEffect(() => {
         if(cookies.token === process.env.cookieToken){
@@ -31,8 +32,8 @@ const Navbar = () => {
     
     const loggedIn = () => (
         <div className={styles.logged_in}>
-            <span style={{ marginRight: '6px', display: asPath === '/admin' ? 'none' : 'block'}}>
-                <Link href="/admin">Admin</Link> 
+            <span onClick={() => adminPath()} style={{ cursor: 'pointer', marginRight: '6px', display: asPath === '/admin' ? 'none' : 'block'}}>
+                Admin
             </span>
             <span style={{ cursor: 'pointer', marginLeft: asPath === '/admin' ? '45%' : '0'}} onClick={() => logOut('token')}>
                 Log Out

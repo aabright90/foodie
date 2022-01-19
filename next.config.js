@@ -5,6 +5,5 @@ module.exports = {
   env: {
     cookieToken: 'asdf65asdg96a5sdf',
     api: 'https://foodiebyausten.herokuapp.com'
-  }
+  },
 }
-

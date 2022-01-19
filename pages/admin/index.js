@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 import { useCookies } from 'react-cookie'
 
 
-const index = ({ orders, products, users }) => {
+const index = ({ orders, products }) => {
 
     const [deleteOpen, setDeleteOpen] = useState(false)
     const [orderList, setOrderList] = useState(orders)
