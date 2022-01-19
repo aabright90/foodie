@@ -1,0 +1,85 @@
+.container {
+    padding:50px
+}
+
+.top {
+    flex:1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1;
+}
+
+.table {
+    width: 100%;
+    border-spacing: 20px;
+    text-align: left;
+}
+
+
+
+.tableScroll {
+    height: 40vh;
+    overflow: scroll;
+}
+
+.button {
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.button:first-child {
+    background-color: teal;
+    margin-right: 10px;
+}
+
+.button:last-child {
+    background-color: crimson;
+}
+
+.itemLink {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.orderButtons {
+    display: flex;
+}
+
+.orderDelete {
+    background-color: red;
+    color: whitesmoke;
+    font-weight: bold;
+    border: none;
+}
+
+.orderDelete:hover {
+    border: 1px solid black;
+}
+
+.productFooter {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem 0;    
+    margin-bottom: 0;
+}
+
+.createButton {
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+    border-radius: 6px;
+    padding: 12px;
+    background-color: #1DA1F2;
+    cursor: pointer;
+    width: 8rem;
+}

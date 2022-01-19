@@ -1,0 +1,109 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.175);
+}
+
+.wrapper {
+    width: 500px;
+    position: relative;
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    cursor: pointer; 
+}
+
+.title {
+    font-size: 24px;
+}
+
+.input {
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
+.sizeField {
+    display: flex;
+    width: 100%;
+}
+
+.sizeItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.extras{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.extrasField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteButton {
+    width: 100%;
+}
+
+.addButton {
+    padding-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.createContainer {
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 0 0;
+}
+
+.create {
+    padding: 10px 80px;
+}
+
+.circularProgress {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.150);
+}
