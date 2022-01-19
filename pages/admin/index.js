@@ -23,7 +23,7 @@ const index = ({ orders, products, users }) => {
     
     useEffect(() => {
       if(cookies.token !== process.env.cookieToken){
-          router.push('/admin/login')
+          router.push('/login')
       } 
     },[cookies])
     
@@ -35,7 +35,7 @@ const index = ({ orders, products, users }) => {
            const updatedOrder = { ...orderList[index] }
            orderList.splice(index, 1, updatedOrder) 
             try {
-               axios.put(`http://localhost:3000/api/orders/${id}`, { status: statusUpdate });
+               axios.put(`${process.env.api}/api/orders/${id}`, { status: statusUpdate });
                setOrderList([...orderList]); 
              } catch (error) {
                throw error
@@ -43,7 +43,7 @@ const index = ({ orders, products, users }) => {
              break
            case 'DELETE':
             try {
-                await axios.delete(`http://localhost:3000/api/orders/${id}`)
+                await axios.delete(`${process.env.api}/api/orders/${id}`)
                 orderList.splice(index, 1)
                 setOrderList([...orderList])
             } catch (error) {
@@ -186,8 +186,8 @@ export default index;
 
 export const getServerSideProps = async () => {
     try {
-      const orders = await axios.get(`http://localhost:3000/api/orders/`);
-      const products = await axios.get(`http://localhost:3000/api/products/`);
+      const orders = await axios.get(`${process.env.api}/api/orders/`);
+      const products = await axios.get(`${process.env.api}/api/products/`);
       return {
         props: {
           orders: orders.data,

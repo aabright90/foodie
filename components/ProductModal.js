@@ -37,7 +37,7 @@ const ProductModal = ({ pizza, closePath, close, type }) => {
           const { url } = res.data;
           const data = { title, dec, img: url, prices, extraOptions };
 
-          await axios.put(`http://localhost:3000/api/products/${pizza}`, data);
+          await axios.put(`${process.env.api}/api/products/${pizza}`, data);
           setProgress(false)
           router.push(closePath);
           close();
@@ -50,7 +50,7 @@ const ProductModal = ({ pizza, closePath, close, type }) => {
           const { url } = res.data;
           const data = { title, dec, img: url, prices, extraOptions };
 
-          await axios.post(`http://localhost:3000/api/products`, data);
+          await axios.post(`${process.env.api}/api/products`, data);
           setProgress(false)
           window.location.reload(false)
         } catch (error) {
@@ -67,7 +67,7 @@ const ProductModal = ({ pizza, closePath, close, type }) => {
       const getPizza = async (pizza) => {
         try {
           const { data } = await axios.get(
-            `http://localhost:3000/api/products/${pizza}`
+            `${process.env.api}/api/products/${pizza}`
           );
           setTitle(data.title);
           setDec(data.dec);

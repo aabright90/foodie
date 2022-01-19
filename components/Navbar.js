@@ -76,7 +76,7 @@ const Navbar = () => {
             </div>
             <div className={styles.right}>
                 <div className={styles.profile} style={{ display: asPath === '/admin/login' ? 'none' : 'block'}}>
-                    {isLoggedIn ? loggedIn(): <Link href="admin/login">Login</Link>}
+                    {isLoggedIn ? loggedIn(): <Link href="/login">Login</Link>}
                 </div>
                 <Link href='/cart' passHref>
                     <div className={styles.item}>

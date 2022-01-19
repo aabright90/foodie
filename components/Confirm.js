@@ -8,7 +8,7 @@ const Confirm = ({ pizza, no, title, theme = null }) => {
 
     const deletePizza = async (pizza) => {
         try {
-           await axios.delete(`http://localhost:3000/api/products/${pizza}`)
+           await axios.delete(`${process.env.api}/api/products/${pizza}`)
            window.location.reload(false)
         } catch (error) {
             console.log(error);
@@ -20,7 +20,7 @@ const Confirm = ({ pizza, no, title, theme = null }) => {
           const getPizza = async (pizza) => {
             try {
               const { data } = await axios.get(
-                `http://localhost:3000/api/products/${pizza}`
+                `${process.env.api}/api/products/${pizza}`
               );
               setName(data.title)
             } catch (error) {
