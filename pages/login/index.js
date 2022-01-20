@@ -4,10 +4,12 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { useCookies } from 'react-cookie'
 import { adminPath } from "../../lib/adminPath";
+import { CircularProgress } from '@mui/material';
 
 const Login = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  const [circularProgress, setCircularProgress] = useState(false)
   const [error, setError] = useState(null);
   const [cookies] = useCookies()
 
@@ -23,14 +25,15 @@ const Login = () => {
 
 
   const handleClick = async () => {
+      setCircularProgress(true)
       try {
           await axios.post(`${process.env.api}/api/login`, {
               username,
               password
           })
+          setCircularProgress(false)
           adminPath()
       } catch (error) {
-          console.log(error);
           setError(true)
       }
   }
@@ -56,6 +59,11 @@ const Login = () => {
         </button>
         {error && <span className={styles.error}>Wrong Credentials!</span>}
       </div>
+      { circularProgress && (
+      <div className={styles.circularProgress}>
+        <CircularProgress />
+      </div>
+      )}
     </div>
   );
 };

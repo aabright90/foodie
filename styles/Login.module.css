@@ -30,3 +30,13 @@
   font-size: 13px;
   color: red;
 }
+
+.circularProgress {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background: rgb(0 0 0 / 30%);
+}
